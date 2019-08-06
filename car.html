@@ -2,9 +2,9 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>详情页 - 宜和购物</title>
+		<title>购物车 - 宜和购物</title>
 		<link href="css/pubic.css" rel="stylesheet" type="text/css">
-		<link href="css/msg.css" rel="stylesheet" type="text/css">
+		<link href="css/car.css" rel="stylesheet" type="text/css">
 	</head>
 	<body>
 		<header>
@@ -65,23 +65,26 @@
 		</nav>
 		
 		<div id="main">
-			<div class="margin qwer">
-				<!--<div class="s_box">
-					<img src="img/t4.jpg"/>
-					<span></span>
-					<p></p>
-				</div>
-				<div class="msg">
-					<h3></h3>
-					<p></p>
-					<span>￥499.00</span>
-					<em class="addCar">加入购物车</em>
-				</div>
-				<div class="b_box">
-					<img src="img/t4.jpg"/>
-				</div>-->
+			<div class="margin">
+				<table border="2" cellspacing="1" width="900" align="center" bordercolor="#bf0250">
+			        <thead>
+			            <tr>
+			                <th>图片</th>
+			                <th>名字</th>
+			                <th>价格</th>
+			                <th>数量</th>
+			                <th>操作</th>
+			            </tr>
+			        </thead>
+			        <tbody>
+			            <tr>
+			                <td colspan="5">目前购物车为空....</td>
+			            </tr>
+			        </tbody>
+			    </table>
 			</div>
 		</div>
+		<div id="link"><a href="list.html">继续购物</a></div>
 		
 		<div id="footer-t">
 			<div class="margin">
@@ -189,5 +192,5 @@
 	</body>
 	<script src="js/jquery.js"></script>
 	<script src="js/ajax.js"></script>
-	<script src="js/msg.js"></script>
+	<script src="js/car.js"></script>
 </html>

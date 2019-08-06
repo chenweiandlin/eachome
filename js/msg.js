@@ -1,3 +1,4 @@
+//渲染页面
 class Msg{
     constructor(){
         this.tbody = document.querySelector(".qwer");
@@ -47,7 +48,7 @@ class Msg{
 new Msg;
 
 
-
+//放大镜效果
 function Magnifier(){
 	this.sBox = document.querySelector(".s_box");
 	this.span = document.querySelector(".s_box span");
@@ -121,7 +122,7 @@ Magnifier.prototype.move = function(e){
 
 
 
-
+//储存数据，加入购物车
 class GoodsList{
     constructor(){
         this.cont = document.querySelector(".qwer");

@@ -137,3 +137,29 @@ class GoodsList{
     }
 }
 new GoodsList;
+
+
+//三级菜单
+var tit = document.querySelector(".mytit")
+var ber = document.querySelector("#banner")
+var ali = document.querySelectorAll(".ban-l ul li");
+var obox = document.querySelector(".linlin");
+
+tit.onmouseover = function(){
+	ber.style.display = "block";
+};
+ber.onmouseleave = function(){
+	ber.style.display = "none";
+};
+for(var i=0;i<ali.length;i++){
+	ali[i].onmouseover = function(){
+		$(this).children(".linlin").css("display","block");
+		this.style.background = "#fff";
+		$(this).find("a").css("color","#333")
+	};
+	ali[i].onmouseout = function(){
+		$(this).children(".linlin").css("display","none");
+		this.style.background = "";
+		$(this).find("a").css("color","#fff")
+	}
+};

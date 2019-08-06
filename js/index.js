@@ -13,7 +13,7 @@ $(".banner1").banner({
 //选项卡
 $(".biaoti li").click(function(){
 	$(".biaoti li").css({
-		color:""
+		color:"#666"
 	})
 	$(".biaoti li").eq($(this).index()).css({
 		color:"red"
@@ -34,4 +34,20 @@ $(".btns").children("li").click(function(){
 	$("html").stop().animate({
 		scrollTop:t
 	})
-})
+});
+
+//三级菜单
+var ali = document.querySelectorAll(".ban-l ul li");
+var obox = document.querySelector(".linlin");
+for(var i=0;i<ali.length;i++){
+	ali[i].onmouseover = function(){
+		$(this).children(".linlin").css("display","block");
+		this.style.background = "#fff";
+		$(this).find("a").css("color","#333")
+	};
+	ali[i].onmouseout = function(){
+		$(this).children(".linlin").css("display","none");
+		this.style.background = "";
+		$(this).find("a").css("color","#fff")
+	}
+};
