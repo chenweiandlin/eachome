@@ -4,7 +4,8 @@
 		<meta charset="UTF-8">
 		<title>宜和购物官网-深圳广电集团旗下电视购物频道网上商城</title>
 		<link href="css/pubic.css" rel="stylesheet" type="text/css">
-		<link href="css/msg.css" rel="stylesheet" type="text/css">
+		<link href="css/list.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="css/pagination.css"/>
 	</head>
 	<body>
 		<header>
@@ -30,7 +31,7 @@
 		
 		<nav>
 			<div class="margin clear">
-				<a href="#" class="logo"><img src="img/logo.png"/></a>
+				<a href="index.html" class="logo"><img src="img/logo.png"/></a>
 				<form>
 			     	<input class="txt" value="请输入您要搜索的商品关键字" type="text"/>
 			        <input class="btn" value="搜索" type="button"/>
@@ -65,21 +66,11 @@
 		</nav>
 		
 		<div id="main">
-			<div class="margin qwer">
-				<!--<div class="s_box">
-					<img src="img/t4.jpg"/>
-					<span></span>
-					<p></p>
-				</div>
-				<div class="msg">
-					<h3></h3>
-					<p></p>
-					<span>￥499.00</span>
-					<em class="addCar">加入购物车</em>
-				</div>
-				<div class="b_box">
-					<img src="img/t4.jpg"/>
-				</div>-->
+			<div id="list" class="margin clear">
+				<ul class="cont"></ul>
+			</div>
+			<div id="setPageDiv">
+			    <div id="Pagination" class="pagination"></div>
 			</div>
 		</div>
 		
@@ -187,7 +178,9 @@
 			</p>
 		</footer>
 	</body>
-	<script src="js/jquery.js"></script>
 	<script src="js/ajax.js"></script>
-	<script src="js/msg.js"></script>
+	<script src="js/jquery.js"></script>
+	<script src="js/jquery.banner.2.0.3.js"></script>
+	<script src="js/list.js"></script>
+	<script src="js/jquery.pagination.js"></script>	
 </html>
