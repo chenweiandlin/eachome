@@ -11,7 +11,7 @@ $(".banner1").banner({
 });
 
 //选项卡
-$(".biaoti li").click(function(){
+$(".biaoti li").mouseover(function(){
 	$(".biaoti li").css({
 		color:"#666"
 	})
@@ -51,3 +51,36 @@ for(var i=0;i<ali.length;i++){
 		$(this).find("a").css("color","#fff")
 	}
 };
+
+//退出登录清除数据
+$("#noshop").click(function(){
+    localStorage.removeItem("loginUser");
+});
+
+
+//	判断是否登录
+class Btncar{
+	constructor(){
+		this.btn=document.querySelector(".shop");
+		this.init();
+	}
+	init(){
+		var that=this;		
+		this.btn.onclick=function(){
+			that.load();
+		}
+	}
+	load(){
+		this.n=localStorage.getItem("loginUser");
+		this.event();
+	}
+	event(){
+		
+		if(!this.n){
+			location.href="login.html";			
+		}else{
+			location.href="car.html";
+		}
+	}
+}
+new Btncar();

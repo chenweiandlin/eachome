@@ -2,9 +2,9 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>详情页 - 宜和购物</title>
+		<title>登录页 - 宜和购物</title>
 		<link href="css/pubic.css" rel="stylesheet" type="text/css">
-		<link href="css/msg.css" rel="stylesheet" type="text/css">
+		<link href="css/login.css" rel="stylesheet" type="text/css">
 	</head>
 	<body>
 		<header>
@@ -16,8 +16,6 @@
 				<div class="top-r">
 					<a href="login.html">[登录]</a>
 					<a href="register.html">[注册]</a>
-					<span>|</span>
-					<a href="##" id="noshop">退出登录</a>
 					<span>|</span>
 					<a href="#">我的宜和</a>
 					<span>|</span>
@@ -33,33 +31,6 @@
 		<nav>
 			<div class="margin clear">
 				<a href="index.html" class="logo"><img src="img/logo.png"/></a>
-				<form>
-			     	<input class="txt" value="请输入您要搜索的商品关键字" type="text"/>
-			        <input class="btn" value="搜索" type="button"/>
-			        <a href="list.html" class="navtxt">
-			        	<span>普洱</span>
-			        	<span>|</span>
-			        	<span>橄榄油</span>
-			        	<span>|</span>
-			        	<span>红酒</span>
-			        	<span>|</span>
-			        	<span>五粮液</span>
-			        	<span>|</span>
-			        	<span>洋酒</span>
-			        	<span>|</span>
-			        	<span>面膜</span>
-			        </a>
-				</form>
-				<a href="##"><p class="shop">我的采购车</p></a>
-			</div>
-			<div class="nav-t margin clear">
-				<p class="mytit">全部分类</p>
-				<ul>
-					<li><a href="index.html">首页</a></li>
-					<li><a href="list.html">看直播</a></li>
-					<li><a href="list.html">宜和农庄</a></li>
-				</ul>
-			</div>
 			<div class="weixin">
 				<img src="img/t1.jpg" />
 				<p>有疑问加微信</p>
@@ -67,22 +38,26 @@
 		</nav>
 		
 		<div id="main">
-			<div class="margin qwer">
-				<!--<div class="s_box">
-					<img src="img/t4.jpg"/>
-					<span></span>
-					<p></p>
-				</div>
-				<div class="msg">
-					<h3></h3>
-					<p></p>
-					<span>￥499.00</span>
-					<em class="addCar">加入购物车</em>
-				</div>
-				<div class="b_box">
-					<img src="img/t4.jpg"/>
-				</div>-->
+			<div class="main1">
+				<img src="http://image.ehmall.com.cn/shop/login/2.jpg"/>
 			</div>
+			<div class="main2">
+				<h3>用户注册</h3>
+				<div class="fff">
+					<span>用户名</span>
+					<input class="name" id="user" type="text" placeholder="请输入用户名"/>
+					<br />
+					<span>密码</span>
+					<input class="ttt" id="pass" type="text" placeholder="请输入密码"/>
+					<br />
+					<span>手机</span>
+					<input class="ttt" type="text" id="tel" placeholder="请输入手机号"><br>
+					<span>邮箱</span>
+					<input  class="ttt" type="text" id="email" placeholder="请输入邮箱"><br>
+					<input class="login" id="btn"  type="button" value="注册"/>
+					<p><span id="cont"></span></p>
+				</div>
+			</div>	
 		</div>
 		
 		<div id="footer-t">
@@ -190,6 +165,5 @@
 		</footer>
 	</body>
 	<script src="js/jquery.js"></script>
-	<script src="js/ajax.js"></script>
-	<script src="js/msg.js"></script>
+	<script src="js/register.js"></script>
 </html>
