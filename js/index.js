@@ -35,6 +35,17 @@ $(".btns").children("li").click(function(){
 		scrollTop:t
 	})
 });
+//楼层菜单显示隐藏
+$(document).scroll(function(){
+  if($(document).scrollTop() >= 500){
+  	$("#floor").fadeIn()
+  }else{
+  	$("#floor").fadeOut()
+  }
+});
+
+
+
 
 //三级菜单
 var ali = document.querySelectorAll(".ban-l ul li");

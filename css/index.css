@@ -109,5 +109,6 @@ footer .te{margin-top: 10px;}
 footer p a{color: #666;}
 footer p span{padding: 0 10px;}
 
+#floor{display: none;}
 #floor ul{width:60px;position: fixed;left:0;top:240px;padding: 10px;background: #d2d3e8;border-radius: 6px;}
 #floor ul li{height: 35px;line-height: 35px;background: #bf0250;margin: 4px 0;text-align: center;border-radius:5px;color: #fff ;}

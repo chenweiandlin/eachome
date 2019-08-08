@@ -21,7 +21,8 @@ class Msg{
     	let u = location.search;
     	let s = u.split("?")[1].split("=")[1];
         var str = "";
-        for(var i=0;i<this.res.length;i++){    
+        for(var i=0;i<this.res.length;i++){
+        		//判断数据库的ID与url里传入的ID相同就渲染页面
                 if(this.res[i].goodsId == s){
                     str += `<div class="message" index="${this.res[i].goodsId}">
 	                    		<div class="s_box">

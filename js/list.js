@@ -10,8 +10,7 @@ class Car{
 			var that=this;
 			ajaxPost(this.url,function(res){
 				//console.log(res);
-				that.res=JSON.parse(res);
-				
+				that.res=JSON.parse(res);				
 				that.display();
 			})
 			
@@ -19,6 +18,7 @@ class Car{
 		display(){
 			var str="";
 				for(var i=0;i<this.res.length;i++){
+								//渲染时将当前数据的ID拼接到url里
 					str+=`<li index="${this.res[i].goodsId}">
 								<a href="msg.html?id=${this.res[i].goodsId}">
 								<img src="${this.res[i].src}">
