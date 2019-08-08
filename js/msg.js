@@ -1,52 +1,52 @@
-//渲染页面
-class Msg{
-    constructor(){
-        this.tbody = document.querySelector(".qwer");
-        this.url = "http://localhost/xiangmu/data/data.json";
-        this.init();
-    }     
-    init(){
-        var that = this;
-        ajaxPost(this.url,function(res){
-            that.res = JSON.parse(res)
-            that.getData();
-        })
-    }
-    getData(){
-        this.goods = localStorage.getItem("goods") ? JSON.parse(localStorage.getItem("goods")) : [];
-
-        this.display();    
-    }
-    display(){
-    	let u = location.search;
-    	let s = u.split("?")[1].split("=")[1];
-        var str = "";
-        for(var i=0;i<this.res.length;i++){
-        		//判断数据库的ID与url里传入的ID相同就渲染页面
-                if(this.res[i].goodsId == s){
-                    str += `<div class="message" index="${this.res[i].goodsId}">
-	                    		<div class="s_box">
-									<img src="${this.res[i].src}"/>
-									<span></span>
-									<p></p>
-								</div>
-								<div class="msg">
-									<h3>${this.res[i].name}</h3>
-									<p>${this.res[i].main}</p>
-									<span>${this.res[i].price}</span>
-									<em class="addCar">加入购物车</em>
-								</div>
-								<div class="b_box">
-									<img src="${this.res[i].src}"/>
-								</div>
-							</div>`
-                }
-        }
-        this.tbody.innerHTML = str;
-        new Magnifier();
-    }
-}
-new Msg;
+////渲染页面
+//class Msg{
+//  constructor(){
+//      this.tbody = document.querySelector(".qwer");
+//      this.url = "http://localhost/xiangmu/data/data.json";
+//      this.init();
+//  }     
+//  init(){
+//      var that = this;
+//      ajaxPost(this.url,function(res){
+//          that.res = JSON.parse(res)
+//          that.getData();
+//      })
+//  }
+//  getData(){
+//      this.goods = localStorage.getItem("goods") ? JSON.parse(localStorage.getItem("goods")) : [];
+//
+//      this.display();    
+//  }
+//  display(){
+//  	let u = location.search;
+//  	let s = u.split("?")[1].split("=")[1];
+//      var str = "";
+//      for(var i=0;i<this.res.length;i++){
+//      		//判断数据库的ID与url里传入的ID相同就渲染页面
+//              if(this.res[i].goodsId == s){
+//                  str += `<div class="message" index="${this.res[i].goodsId}">
+//	                    		<div class="s_box">
+//									<img src="${this.res[i].src}"/>
+//									<span></span>
+//									<p></p>
+//								</div>
+//								<div class="msg">
+//									<h3>${this.res[i].name}</h3>
+//									<p>${this.res[i].main}</p>
+//									<span>${this.res[i].price}</span>
+//									<em class="addCar">加入购物车</em>
+//								</div>
+//								<div class="b_box">
+//									<img src="${this.res[i].src}"/>
+//								</div>
+//							</div>`
+//              }
+//      }
+//      this.tbody.innerHTML = str;
+//      new Magnifier();
+//  }
+//}
+//new Msg;
 
 
 //放大镜效果
@@ -124,52 +124,52 @@ Magnifier.prototype.move = function(e){
 
 
 //储存数据，加入购物车
-class GoodsList{
-    constructor(){
-        this.cont = document.querySelector(".qwer");
-        this.url = "http://localhost/xiangmu/data/data.json";
-        this.addEvent();
-    }
-    addEvent(){
-        var that = this;
-        let u = location.search;
-    	let s = u.split("?")[1].split("=")[1];
-        this.cont.onclick = function(eve){
-            var e = eve || window.event;
-            var t = e.target || e.srcElement;
-            if(t.className == "addCar"){
-                that.id = s;
-                that.setData();
-            }
-        }
-    }
-    setData(){
-        this.goods = localStorage.getItem("goods");
-        if(this.goods){
-            this.goods = JSON.parse(this.goods)
-            var onoff = true;
-            for(var i=0;i<this.goods.length;i++){
-                if(this.goods[i].id == this.id){
-                    this.goods[i].num++;
-                    onoff = false;
-                }
-            }
-            if(onoff){
-                this.goods.push({
-                    id:this.id,
-                    num:1
-                })
-            }
-        }else{
-            this.goods = [{
-                id:this.id,
-                num:1
-            }];
-        }
-        localStorage.setItem("goods",JSON.stringify(this.goods))
-    }
-}
-new GoodsList;
+//class GoodsList{
+//  constructor(){
+//      this.cont = document.querySelector(".qwer");
+//      this.url = "http://localhost/xiangmu/data/data.json";
+//      this.addEvent();
+//  }
+//  addEvent(){
+//      var that = this;
+//      let u = location.search;
+//  	let s = u.split("?")[1].split("=")[1];
+//      this.cont.onclick = function(eve){
+//          var e = eve || window.event;
+//          var t = e.target || e.srcElement;
+//          if(t.className == "addCar"){
+//              that.id = s;
+//              that.setData();
+//          }
+//      }
+//  }
+//  setData(){
+//      this.goods = localStorage.getItem("goods");
+//      if(this.goods){
+//          this.goods = JSON.parse(this.goods)
+//          var onoff = true;
+//          for(var i=0;i<this.goods.length;i++){
+//              if(this.goods[i].id == this.id){
+//                  this.goods[i].num++;
+//                  onoff = false;
+//              }
+//          }
+//          if(onoff){
+//              this.goods.push({
+//                  id:this.id,
+//                  num:1
+//              })
+//          }
+//      }else{
+//          this.goods = [{
+//              id:this.id,
+//              num:1
+//          }];
+//      }
+//      localStorage.setItem("goods",JSON.stringify(this.goods))
+//  }
+//}
+//new GoodsList;
 
 
 //退出登录清除数据
@@ -178,29 +178,29 @@ $("#noshop").click(function(){
 });
 
 
-//	判断是否登录
-class Btncar{
-	constructor(){
-		this.btn=document.querySelector(".shop");
-		this.init();
-	}
-	init(){
-		var that=this;		
-		this.btn.onclick=function(){
-			that.load();
-		}
-	}
-	load(){
-		this.n=localStorage.getItem("loginUser");
-		this.event();
-	}
-	event(){
-		
-		if(!this.n){
-			location.href="login.html";			
-		}else{
-			location.href="car.html";
-		}
-	}
-}
-new Btncar();
+////	判断是否登录
+//class Btncar{
+//	constructor(){
+//		this.btn=document.querySelector(".shop");
+//		this.init();
+//	}
+//	init(){
+//		var that=this;		
+//		this.btn.onclick=function(){
+//			that.load();
+//		}
+//	}
+//	load(){
+//		this.n=localStorage.getItem("loginUser");
+//		this.event();
+//	}
+//	event(){
+//		
+//		if(!this.n){
+//			location.href="login.html";			
+//		}else{
+//			location.href="car.html";
+//		}
+//	}
+//}
+//new Btncar();
